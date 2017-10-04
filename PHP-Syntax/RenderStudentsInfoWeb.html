@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RenderStudentsInfo</title>
+</head>
+<body>
+<form action="Web_2.php" method="get">
+    <div>
+        Delimiter:
+        <select title="" name="delimiter">
+            <option value=",">,</option>
+            <option value="|">|</option>
+            <option value="&">&</option>
+        </select>
+    </div>
+
+    <div>
+        Names:
+        <input title="" type="text" name="names">
+    </div>
+    <div>
+        Ages:
+        <input title="" type="text" name="ages">
+    </div>
+    <div>
+        <input type="submit" name="filter" value="Filter!">
+    </div>
+</form>
+<?php if(isset ($names,$ages)): ?>
+<table border="1" cellpadding="0">
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Age</td>
+    </tr>
+    </thead>
+    <tbody>
+    <?php ($i=0; $i<count($names); $i++): ?>
+    <tr>
+        <td><?= $names[$i]; ?></td>
+        <td><?= $ages[$i]; ?></td>
+
+    </tr>
+    <?php endfor; ?>
+    </tbody>
+</table>
+<?php andif; ?>
+
+</body>
+</html>
